@@ -34,11 +34,11 @@ export default function Services() {
         <div className="inline-flex justify-center w-full">
           <SectionTag text="Our Expertise" />
         </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 font-serif leading-[1.1]">
+        <h1 className="text-[2.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-8xl mb-8 font-serif">
           <RevealText>Curated Services for</RevealText>
           <RevealText delayOffset={0.1}>Exceptional Needs</RevealText>
         </h1>
-        <p className="text-muted max-w-[600px] mx-auto text-[15px]">
+        <p className="text-muted max-w-[600px] mx-auto text-[14px] md:text-[15px]">
           We design and produce events varying in scale and nature, but our approach remains constant: intentional, refined, and entirely bespoke.
         </p>
       </div>
@@ -68,9 +68,9 @@ export default function Services() {
               {/* Text side */}
               <div className="w-full md:w-1/2">
                 <div className="text-[10px] uppercase tracking-[0.2em] text-gold mb-6 font-medium">0{idx + 1}</div>
-                <h2 className="text-3xl md:text-5xl mb-4 font-serif leading-tight">{service.title}</h2>
-                <div className="text-[14px] text-charcoal/60 uppercase tracking-widest mb-8 border-b border-gold/20 pb-4 inline-block">{service.subtitle}</div>
-                <p className="text-muted text-[15px] leading-relaxed mb-8">
+                <h2 className="text-[2rem] leading-tight md:text-5xl mb-4 font-serif">{service.title}</h2>
+                <div className="text-[12px] md:text-[14px] text-charcoal/60 uppercase tracking-widest mb-8 border-b border-gold/20 pb-4 inline-block">{service.subtitle}</div>
+                <p className="text-muted text-[14px] md:text-[15px] leading-relaxed mb-8">
                   {service.description}
                 </p>
 

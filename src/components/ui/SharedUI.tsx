@@ -119,7 +119,7 @@ export const SectionTag = ({ text, light = false }: { text: string, light?: bool
   </div>
 );
 
-export const GoldButton = ({ text, outline = false, className = "", to, href }: { text: string, outline?: boolean, className?: string, to?: string, href?: string }) => {
+export const GoldButton = ({ text, outline = false, className = "", to, href, onClick }: { text: string, outline?: boolean, className?: string, to?: string, href?: string, onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void }) => {
   const btnClass = cn(
     "inline-block px-8 py-3 rounded-full text-[12px] uppercase tracking-[0.12em] transition-all duration-500 cursor-pointer",
     outline 
@@ -137,14 +137,14 @@ export const GoldButton = ({ text, outline = false, className = "", to, href }: 
   );
 
   if (to) {
-    return <Link to={to}>{content}</Link>;
+    return <Link to={to} onClick={onClick as any}>{content}</Link>;
   }
 
   if (href) {
-    return <a href={href}>{content}</a>;
+    return <a href={href} onClick={onClick as any}>{content}</a>;
   }
 
-  return <button className="p-0 border-none bg-transparent">{content}</button>;
+  return <button className="p-0 border-none bg-transparent" onClick={onClick as any}>{content}</button>;
 };
 
 export const Counter = ({ value, label }: { value: string, label: string }) => {

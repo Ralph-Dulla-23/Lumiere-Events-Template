@@ -26,7 +26,7 @@ export default function Portfolio() {
       <div className="bg-charcoal text-white pt-32 selection:bg-gold/30 selection:text-white">
         <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-24 text-center md:text-left">
           <SectionTag text="Visual Narratives" light />
-          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 font-serif leading-[1.1]">
+          <h1 className="text-[2.75rem] sm:text-5xl md:text-7xl lg:text-8xl mb-8 font-serif leading-[1.1]">
             <RevealText>A Glimpse into</RevealText>
             <RevealText delayOffset={0.1}><span className="italic text-gold">Our World</span></RevealText>
           </h1>
@@ -38,9 +38,9 @@ export default function Portfolio() {
         {/* Horizontal GSAP-like Scroll Section */}
         <section ref={targetRef} className="relative h-[300vh]">
           <div className="sticky top-0 h-[100dvh] flex items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex gap-12 px-6 md:px-12 w-[300vw]">
+            <motion.div style={{ x }} className="flex gap-6 md:gap-12 px-6 md:px-12 w-[350vw] md:w-[300vw]">
                {images.map((img, i) => (
-                  <div key={i} className="w-[80vw] md:w-[60vw] lg:w-[45vw] h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden">
+                  <div key={i} className="w-[85vw] md:w-[60vw] lg:w-[45vw] h-[50vh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-2xl md:rounded-none">
                     <div 
                       className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
                       style={{ backgroundImage: `url(${img}q=80&w=2070&auto=format&fit=crop)` }}

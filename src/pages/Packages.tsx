@@ -85,7 +85,7 @@ export default function Packages() {
           <div className="inline-flex justify-center w-full">
             <SectionTag text="Our Packages" />
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 font-serif leading-[1.1]">
+          <h1 className="text-[2.75rem] sm:text-5xl md:text-7xl lg:text-8xl mb-8 font-serif leading-[1.1]">
             <RevealText>Tailored to Your</RevealText>
             <RevealText delayOffset={0.1}>Vision</RevealText>
           </h1>
@@ -94,7 +94,7 @@ export default function Packages() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-surface items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0.5 bg-transparent lg:bg-surface items-center w-full">
           {tiers.map((tier, i) => (
             <motion.div 
               key={i}
@@ -103,10 +103,10 @@ export default function Packages() {
               viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
               className={cn(
-                "p-12 lg:p-16 flex flex-col h-full transition-all duration-500 relative",
+                "p-8 md:p-12 lg:p-16 flex flex-col h-full transition-all duration-500 relative rounded-2xl lg:rounded-none",
                 tier.inverted 
-                  ? "bg-dark-footer text-white md:-translate-y-4 shadow-[0_40px_80px_rgba(0,0,0,0.25)] z-20" 
-                  : "bg-white hover:bg-page-bg z-10"
+                  ? "bg-dark-footer text-white lg:-translate-y-4 shadow-[0_40px_80px_rgba(0,0,0,0.25)] z-20" 
+                  : "bg-white hover:bg-page-bg z-10 shadow-sm lg:shadow-none"
               )}
             >
               {tier.label === 'Most Popular' && (
@@ -145,7 +145,7 @@ export default function Packages() {
       <div className="mt-32 max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <SectionTag text="The Deep Dive" />
-          <h2 className="text-4xl md:text-5xl font-serif mb-6 text-charcoal">How We Work</h2>
+          <h2 className="text-[2.5rem] leading-tight md:text-5xl font-serif mb-6 text-charcoal">How We Work</h2>
           <p className="text-muted text-[15px] max-w-[500px] mx-auto">
             A look inside our Full-Service methodology. We break down the overwhelming into a curated, step-by-step journey.
           </p>
@@ -173,7 +173,7 @@ export default function Packages() {
       {/* --- FAQ SECTION --- */}
       <div className="mt-40 max-w-[800px] mx-auto px-6 md:px-12 mb-32">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif text-charcoal mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-[2.5rem] leading-tight md:text-4xl font-serif text-charcoal mb-6">Frequently Asked Questions</h2>
         </div>
 
         <div className="border-t border-charcoal/10">

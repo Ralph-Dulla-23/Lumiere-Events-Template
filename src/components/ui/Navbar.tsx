@@ -78,7 +78,10 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-6">
-            <GoldButton text="Let's Talk" to="/contact" />
+            <GoldButton 
+              text="Let's Talk" 
+              to="/contact"
+            />
           </div>
 
           <button 
@@ -128,7 +131,10 @@ export const Navbar = () => {
                 transition={{ delay: 0.5 }}
                 className="pt-6 w-full flex justify-center"
               >
-                <GoldButton text="Contact Us" to="/contact" />
+                <GoldButton 
+                  text="Contact Us" 
+                  to="/contact"
+                />
               </motion.div>
             </div>
           </motion.div>

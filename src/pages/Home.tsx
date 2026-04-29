@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="w-full md:w-1/2 flex items-center px-6 md:px-12 lg:pl-24 pb-16 md:pb-20 relative z-10 bg-page-bg/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
         <motion.div style={{ opacity, y: useTransform(scrollYProgress, [0, 1], ["0%", "20%"]) }} className="max-w-[540px] pt-12 md:pt-32">
           <SectionTag text="Elite Planning & Design" />
-          <h1 className="flex flex-col text-6xl md:text-7xl lg:text-8xl mb-4 leading-[1.05]">
+          <h1 className="flex flex-col text-[2.75rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl mb-4">
             <RevealText delayOffset={0.2}>Where Every</RevealText>
             <RevealText delayOffset={0.3}><span className="italic text-gold">Moment</span> Becomes</RevealText>
             <RevealText delayOffset={0.4}>a Memory</RevealText>
@@ -126,15 +126,15 @@ const Services = () => {
   return (
     <section className="bg-white section-padding" id="services">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="text-center mb-20 flex flex-col items-center">
+        <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
           <SectionTag text="Our Expertise" />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
+          <h2 className="text-[2.25rem] leading-tight md:text-5xl lg:text-6xl mb-6">
             <RevealText>One Team. Every Kind of Event.</RevealText>
           </h2>
-          <p className="text-muted max-w-[600px] mx-auto">From intimate weddings to large-scale corporate summits, our methodology remains consistent: refined, calm, and exceptional.</p>
+          <p className="text-muted max-w-[600px] mx-auto text-[14px] md:text-[15px]">From intimate weddings to large-scale corporate summits, our methodology remains consistent: refined, calm, and exceptional.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-surface">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0.5 bg-transparent md:bg-surface">
           {services.map((service, i) => (
             <motion.div 
               key={i}
@@ -142,7 +142,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
-              className="group bg-white p-12 lg:p-16 transition-colors duration-500 hover:bg-page-bg relative overflow-hidden"
+              className="group bg-white p-8 md:p-12 lg:p-16 transition-colors duration-500 hover:bg-page-bg relative overflow-hidden rounded-2xl md:rounded-none"
             >
               <span className="text-[12px] font-sans font-medium text-gold mb-8 block tracking-widest">{service.num}</span>
               <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500 origin-left">{service.icon}</div>
@@ -199,7 +199,7 @@ const About = () => {
         {/* Right Column: Text */}
         <div className="w-full md:w-1/2">
           <SectionTag text="Our Philosophy" />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-8 flex flex-col">
+          <h2 className="text-[2.5rem] leading-tight md:text-5xl lg:text-6xl mb-8 flex flex-col">
             <RevealText>We Plan Events.</RevealText>
             <RevealText delayOffset={0.1}><span className="italic text-gold">You Make Memories.</span></RevealText>
           </h2>
@@ -244,15 +244,15 @@ const StatsBar = () => {
         Numbers
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-0 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 relative z-10">
         <Counter value="300+" label="Successful Events" />
-        <div className="hidden md:block absolute left-1/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
+        <div className="hidden lg:block absolute left-1/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
         
         <Counter value="10+" label="Years of Experience" />
-        <div className="hidden md:block absolute left-2/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
+        <div className="hidden lg:block absolute left-2/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
         
         <Counter value="150+" label="Planner Partners" />
-        <div className="hidden md:block absolute left-3/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
+        <div className="hidden lg:block absolute left-3/4 h-24 w-[1px] bg-gold/20 top-1/2 -translate-y-1/2" />
         
         <Counter value="98%" label="Client Satisfaction" />
       </div>
@@ -262,14 +262,14 @@ const StatsBar = () => {
 
 const Gallery = () => {
   const items = [
-    { url: 'https://images.unsplash.com/photo-1519225495045-3b363d688845?q=80&w=2070&auto=format&fit=crop', span: 'col-span-5 row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop', span: 'col-span-4 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop', span: 'col-span-3 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop', span: 'col-span-4 row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop', span: 'col-span-3 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=1742&auto=format&fit=crop', span: 'col-span-5 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1887&auto=format&fit=crop', span: 'col-span-4 row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1961&auto=format&fit=crop', span: 'col-span-3 row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1519225495045-3b363d688845?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-2' },
+    { url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-2' },
+    { url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=1742&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1887&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1961&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-1' },
   ];
 
   return (
@@ -278,7 +278,7 @@ const Gallery = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <SectionTag text="Our Portfolio" />
-            <h2 className="text-4xl md:text-5xl">
+            <h2 className="text-[2.5rem] leading-tight md:text-5xl">
               <RevealText>Weddings, Events, &</RevealText>
               <RevealText delayOffset={0.1}>Everything Between</RevealText>
             </h2>
@@ -290,7 +290,7 @@ const Gallery = () => {
           </Magnetic>
         </div>
 
-        <div className="grid grid-cols-12 gap-2 h-[1200px] md:h-[800px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-2 h-auto md:h-[800px]">
           {items.map((item, i) => (
             <motion.div 
               key={i} 
@@ -298,7 +298,7 @@ const Gallery = () => {
               whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: i * 0.05, duration: 1, ease: [0.33, 1, 0.68, 1] }}
-              className={cn("relative overflow-hidden group cursor-pointer", item.span)}
+              className={cn("relative overflow-hidden group cursor-pointer rounded-2xl md:rounded-none col-span-1 h-[300px] md:h-auto", item.span)}
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
@@ -358,7 +358,7 @@ const Packages = () => {
           <p className="text-muted max-w-[600px] mx-auto">Flexible involvement levels designed to give you peace of mind while we handle the complexity.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-surface items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0.5 bg-transparent lg:bg-surface items-center w-full">
           {tiers.map((tier, i) => (
             <motion.div 
               key={i}
@@ -367,10 +367,10 @@ const Packages = () => {
               viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
               className={cn(
-                "p-12 lg:p-16 flex flex-col h-full transition-all duration-500 relative",
+                "p-8 md:p-12 lg:p-16 flex flex-col h-full transition-all duration-500 relative rounded-2xl lg:rounded-none",
                 tier.inverted 
-                  ? "bg-dark-footer text-white md:-translate-y-4 shadow-[0_40px_80px_rgba(0,0,0,0.25)] z-20" 
-                  : "bg-white hover:bg-page-bg z-10"
+                  ? "bg-dark-footer text-white lg:-translate-y-4 shadow-[0_40px_80px_rgba(0,0,0,0.25)] z-20" 
+                  : "bg-white hover:bg-page-bg z-10 shadow-sm lg:shadow-none"
               )}
             >
               {tier.label === 'Most Popular' && (
@@ -438,13 +438,13 @@ const Testimonials = () => {
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="text-center mb-20 flex flex-col items-center">
           <SectionTag text="Client Stories" />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="text-[2.5rem] leading-tight md:text-5xl lg:text-6xl">
             <RevealText>Real Stories From</RevealText>
             <RevealText delayOffset={0.1}>Real Clients</RevealText>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((rev, i) => (
             <motion.div 
               key={i}
@@ -452,7 +452,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-5%" }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
-              className="bg-white p-12 relative hover:shadow-xl transition-shadow duration-500"
+              className="bg-white p-8 sm:p-12 relative hover:shadow-xl transition-shadow duration-500 rounded-2xl md:rounded-none"
             >
               <div className="absolute top-8 right-8 text-[9px] uppercase tracking-[0.2em] text-gold font-medium">
                 {rev.tag}
@@ -482,55 +482,78 @@ const Testimonials = () => {
   );
 };
 
-const PlannerPartner = () => {
+const InquirySection = () => {
   return (
-    <section className="bg-page-bg section-padding overflow-hidden">
+    <section className="bg-page-bg section-padding overflow-hidden" id="contact">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-        {/* Left Image Area */}
-        <div className="relative h-[400px] md:h-[650px] group overflow-hidden">
-          <div className="absolute inset-0 watermark-text text-[15vw] opacity-10 flex items-center justify-center font-serif leading-none z-0">
-            Planner
+        {/* Left Map Area */}
+        <div className="relative h-[400px] md:h-[650px] group overflow-hidden bg-surface rounded-2xl md:rounded-none">
+          <div className="absolute inset-0 z-0">
+             <iframe
+                title="Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280010996!2d-74.14448737274075!3d40.69763123307521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'grayscale(100%) contrast(1.2) opacity(0.8)' }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+             ></iframe>
           </div>
-          <motion.div 
-            initial={{ scale: 1.1 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="w-full h-full bg-cover bg-center shadow-2xl relative z-10"
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop")' }}
-          />
-          <div className="absolute inset-0 border-[20px] border-white/20 m-6 z-20 pointer-events-none" />
+          <div className="absolute inset-0 border-[20px] border-white/20 m-6 z-20 pointer-events-none hidden md:block" />
+          
+          <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 border border-charcoal/5 z-20">
+            <h4 className="font-serif text-xl mb-2 text-charcoal">Lumière Studio</h4>
+            <p className="text-[13px] text-muted mb-1">123 Elegance Avenue, Suite 400</p>
+            <p className="text-[13px] text-muted mb-4">New York, NY 10012</p>
+            <a href="mailto:hello@lumiere.com" className="text-[12px] uppercase tracking-widest text-gold font-medium hover:text-charcoal transition-colors">hello@lumiere.com</a>
+          </div>
         </div>
 
         {/* Right Form Area */}
         <div>
-          <SectionTag text="For Professional Planners" />
-          <h2 className="text-4xl md:text-5xl mb-8">
-            <RevealText>Are You a Professional</RevealText>
-            <RevealText delayOffset={0.1}>Planner?</RevealText>
+          <SectionTag text="Start Your Journey" />
+          <h2 className="text-[2.5rem] leading-tight md:text-5xl mb-8">
+            <RevealText>Let's Create Something</RevealText>
+            <RevealText delayOffset={0.1}><span className="italic text-gold">Extraordinary</span></RevealText>
           </h2>
           <div className="w-16 h-[2px] bg-gold mb-10" />
           
           <p className="text-muted mb-6 text-[14px]">
-            We understand the complexities of luxury planning. If you're an international agency seeking a reliable coordination partner for destination events, let's talk.
+            Every memorable event begins with a conversation. Share the details of your upcoming celebration, and our team will be in touch within 24 hours to schedule what's next.
           </p>
 
           <form className="grid gap-10 mt-12 group" onSubmit={(e) => e.preventDefault()}>
             <div className="relative overflow-hidden">
-              <input type="text" placeholder="Your Name" className="w-full bg-transparent border-b border-charcoal/20 py-4 text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 peer" />
+              <input type="text" placeholder="Your Name" className="w-full bg-transparent border-b border-charcoal/20 py-4 min-h-[50px] text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 peer rounded-none" />
               <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 peer-focus:w-full" />
             </div>
             <div className="relative overflow-hidden">
-              <input type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-charcoal/20 py-4 text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 peer" />
+              <input type="email" placeholder="Email Address" className="w-full bg-transparent border-b border-charcoal/20 py-4 min-h-[50px] text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 peer rounded-none" />
               <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 peer-focus:w-full" />
             </div>
             <div className="relative overflow-hidden">
-              <textarea placeholder="Tell us about your project..." rows={3} className="w-full bg-transparent border-b border-charcoal/20 py-4 text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 resize-none peer" />
+              <select defaultValue="" className="w-full bg-transparent border-b border-charcoal/20 py-4 min-h-[50px] text-[13px] outline-none focus:border-gold transition-colors text-muted/80 peer rounded-none appearance-none cursor-pointer">
+                <option value="" disabled hidden>What type of service are you looking for?</option>
+                <option value="wedding" className="text-charcoal bg-white">Full-Service Wedding Planning</option>
+                <option value="corporate" className="text-charcoal bg-white">Corporate Event Design</option>
+                <option value="social" className="text-charcoal bg-white">Private Social Celebration</option>
+                <option value="destination" className="text-charcoal bg-white">Destination Event</option>
+                <option value="other" className="text-charcoal bg-white">Other</option>
+              </select>
+              {/* Custom arrow for select */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-charcoal/40">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 peer-focus:w-full" />
+            </div>
+            <div className="relative overflow-hidden">
+              <textarea placeholder="Tell us about your event vision..." rows={3} className="w-full bg-transparent border-b border-charcoal/20 py-4 min-h-[50px] text-[13px] outline-none focus:border-gold transition-colors placeholder:text-muted/50 resize-none peer rounded-none" />
               <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300 peer-focus:w-full" />
             </div>
             
             <div className="pt-6">
-              <GoldButton text="Let's Partner" />
+              <GoldButton text="Request Consultation" />
             </div>
           </form>
         </div>
@@ -541,7 +564,7 @@ const PlannerPartner = () => {
 
 const Newsletter = () => {
   return (
-    <section className="bg-gold py-32 relative overflow-hidden text-center" id="contact">
+    <section className="bg-gold py-32 relative overflow-hidden text-center" id="newsletter">
       {/* Watermark */}
       <motion.div 
         initial={{ y: 50, opacity: 0 }}
@@ -553,7 +576,7 @@ const Newsletter = () => {
       </motion.div>
 
       <div className="relative z-10 px-6">
-        <h2 className="text-white text-5xl md:text-7xl lg:text-8xl mb-8">
+        <h2 className="text-white text-[2.75rem] leading-[1.05] sm:text-5xl md:text-7xl lg:text-8xl mb-8">
           <RevealText>Stay Inspired.</RevealText>
           <RevealText delayOffset={0.1}>Stay Informed.</RevealText>
         </h2>
@@ -561,14 +584,14 @@ const Newsletter = () => {
           Join our seasonal circle for exclusive venue reveals, design trends, and agency insights.
         </p>
 
-        <div className="max-w-[540px] mx-auto flex flex-col md:flex-row gap-4 group">
+        <div className="max-w-[540px] mx-auto flex flex-col sm:flex-row gap-4 group">
           <input 
             type="email" 
             placeholder="Your Email Address" 
-            className="flex-1 px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/10 rounded-full text-white placeholder:text-white/60 outline-none focus:bg-white/30 transition-all font-light focus:border-white/40"
+            className="flex-1 min-h-[50px] px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/10 rounded-full text-white placeholder:text-white/60 outline-none focus:bg-white/30 transition-all font-light focus:border-white/40"
           />
           <Magnetic>
-            <button className="px-10 py-4 w-full md:w-auto bg-white text-gold rounded-full uppercase tracking-[0.2em] text-[11px] font-bold hover:bg-charcoal hover:text-white transition-all shadow-xl">
+            <button className="min-h-[50px] px-10 py-4 w-full sm:w-auto bg-white text-gold rounded-full uppercase tracking-[0.2em] text-[11px] font-bold hover:bg-charcoal hover:text-white transition-all shadow-xl">
               Subscribe
             </button>
           </Magnetic>
@@ -588,7 +611,7 @@ export default function Home() {
       <Gallery />
       <Packages />
       <Testimonials />
-      <PlannerPartner />
+      <InquirySection />
       <Newsletter />
     </>
   );
