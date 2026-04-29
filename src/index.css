@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Jost", sans-serif;
+
+  --color-page-bg: #FAF7F2;
+  --color-surface: #EFE8DB;
+  --color-charcoal: #1C1917;
+  --color-muted: #8B7D6E;
+  --color-gold: #B8935A;
+  --color-dark-footer: #181512;
+}
+
+@layer base {
+  body {
+    @apply bg-page-bg text-charcoal font-sans font-light tracking-[0.04em] leading-[1.8];
+    -webkit-font-smoothing: antialiased;
+    /* Optional: hide cursor for desktop so custom one takes over. 
+       Usually applied dynamically, but we'll scope it to a class applied by react */
+  }
+  
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light leading-[1.1];
+  }
+
+  /* Watermark effect */
+  .watermark-text {
+    -webkit-text-stroke: 1px #B8935A;
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+}
