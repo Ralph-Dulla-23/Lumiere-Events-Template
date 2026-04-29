@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <section ref={ref} className="relative min-h-[100dvh] pt-24 md:pt-0 flex flex-col md:flex-row overflow-hidden" id="about">
       {/* Watermark */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 watermark-text text-[18vw] leading-none opacity-10 z-0 select-none hidden lg:block font-serif">
+      <div aria-hidden="true" className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 watermark-text text-[18vw] leading-none opacity-10 z-0 select-none hidden lg:block font-serif">
         Lumière
       </div>
 
@@ -64,10 +64,12 @@ const Hero = () => {
 
       {/* Right Column Image Parallax */}
       <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-0 overflow-hidden">
-        <motion.div 
-          className="absolute inset-[-10%] bg-cover bg-center"
+        <motion.img 
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
+          alt="Lumiere Events Hero"
+          fetchPriority="high"
+          className="absolute inset-[-10%] w-[120%] h-[120%] object-cover object-center"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop")',
             y 
           }}
         />
@@ -142,7 +144,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
               transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
-              className="group bg-white p-8 md:p-12 lg:p-16 transition-colors duration-500 hover:bg-page-bg relative overflow-hidden rounded-2xl md:rounded-none"
+              className="group bg-white p-8 md:p-12 lg:p-16 transition-colors duration-500 hover:bg-page-bg relative overflow-hidden card-responsive"
             >
               <span className="text-[12px] font-sans font-medium text-gold mb-8 block tracking-widest">{service.num}</span>
               <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500 origin-left">{service.icon}</div>
@@ -176,7 +178,7 @@ const About = () => {
           >
             <motion.div 
               className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-[2s]" 
-              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop")', y: y1 }} 
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1200&auto=format&fit=crop")', y: y1 }} 
             />
           </motion.div>
           
@@ -240,7 +242,7 @@ const StatsBar = () => {
   return (
     <section className="bg-surface py-20 relative overflow-hidden">
       {/* Watermark */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 watermark-text text-[15vw] leading-none opacity-5 z-0 font-serif">
+      <div aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 watermark-text text-[15vw] leading-none opacity-5 z-0 font-serif">
         Numbers
       </div>
 
@@ -262,14 +264,14 @@ const StatsBar = () => {
 
 const Gallery = () => {
   const items = [
-    { url: 'https://images.unsplash.com/photo-1519225495045-3b363d688845?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-2' },
-    { url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=1742&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1887&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
-    { url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1961&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1519225495045-3b363d688845?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-2' },
+    { url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-2' },
+    { url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-1 md:row-span-1' },
+    { url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop', span: 'md:col-span-2 md:row-span-1' },
   ];
 
   return (
@@ -298,7 +300,7 @@ const Gallery = () => {
               whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: i * 0.05, duration: 1, ease: [0.33, 1, 0.68, 1] }}
-              className={cn("relative overflow-hidden group cursor-pointer rounded-2xl md:rounded-none col-span-1 h-[300px] md:h-auto", item.span)}
+              className={cn("relative overflow-hidden group cursor-pointer card-responsive col-span-1 h-[300px] md:h-auto", item.span)}
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
@@ -343,7 +345,7 @@ const Packages = () => {
 
   return (
     <section className="bg-page-bg section-padding relative" id="packages">
-      <div className="absolute top-0 right-0 watermark-text text-[12vw] opacity-10 font-serif leading-none pt-24 pr-12 select-none tracking-tight">
+      <div aria-hidden="true" className="absolute top-0 right-0 watermark-text text-[12vw] opacity-10 font-serif leading-none pt-24 pr-12 select-none tracking-tight">
         Plans
       </div>
 
@@ -452,7 +454,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-5%" }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
-              className="bg-white p-8 sm:p-12 relative hover:shadow-xl transition-shadow duration-500 rounded-2xl md:rounded-none"
+              className="bg-white p-8 sm:p-12 relative hover:shadow-xl transition-shadow duration-500 card-responsive"
             >
               <div className="absolute top-8 right-8 text-[9px] uppercase tracking-[0.2em] text-gold font-medium">
                 {rev.tag}
@@ -487,7 +489,7 @@ const InquirySection = () => {
     <section className="bg-page-bg section-padding overflow-hidden" id="contact">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
         {/* Left Map Area */}
-        <div className="relative h-[400px] md:h-[650px] group overflow-hidden bg-surface rounded-2xl md:rounded-none">
+        <div className="relative h-[400px] md:h-[650px] group overflow-hidden bg-surface card-responsive">
           <div className="absolute inset-0 z-0">
              <iframe
                 title="Office Location"
@@ -567,6 +569,7 @@ const Newsletter = () => {
     <section className="bg-gold py-32 relative overflow-hidden text-center" id="newsletter">
       {/* Watermark */}
       <motion.div 
+        aria-hidden="true"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 0.08 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -616,3 +619,4 @@ export default function Home() {
     </>
   );
 }
+

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { motion, useInView } from 'motion/react';
+import { motion, useInView, useMotionValue, useSpring, useTransform, animate } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 
@@ -64,7 +64,13 @@ export const CustomCursor = () => {
 
 export const Magnetic = ({ children }: { children: React.ReactElement }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
+  const springX = useSpring(x, springConfig);
+  const springY = useSpring(y, springConfig);
 
   const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -72,21 +78,21 @@ export const Magnetic = ({ children }: { children: React.ReactElement }) => {
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.15, y: middleY * 0.15 });
+    x.set(middleX * 0.15);
+    y.set(middleY * 0.15);
   };
 
   const reset = () => {
-    setPosition({ x: 0, y: 0 });
+    x.set(0);
+    y.set(0);
   };
 
-  const { x, y } = position;
   return (
     <motion.div
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
-      animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      style={{ x: springX, y: springY }}
     >
       {children}
     </motion.div>
@@ -148,33 +154,40 @@ export const GoldButton = ({ text, outline = false, className = "", to, href, on
 };
 
 export const Counter = ({ value, label }: { value: string, label: string }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
+  const containerRef = useRef(null);
+  const numberRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  
   const numericValue = parseInt(value.replace(/\D/g, ''));
   const suffix = value.replace(/[0-9]/g, '');
+  
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    stiffness: 20,
+    damping: 15
+  });
+
+  useEffect(() => {
+    return springValue.on("change", (latest) => {
+      if (numberRef.current) {
+        numberRef.current.textContent = String(Math.floor(latest));
+      }
+    });
+  }, [springValue]);
 
   useEffect(() => {
     if (isInView) {
-      let start = 0;
-      const end = numericValue;
-      const duration = 2000;
-      const stepTime = Math.abs(Math.floor(duration / end));
-      
-      const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start >= end) clearInterval(timer);
-      }, stepTime);
-      
-      return () => clearInterval(timer);
+      animate(motionValue, numericValue, {
+        duration: 2,
+        ease: "easeOut"
+      });
     }
-  }, [isInView, numericValue]);
+  }, [isInView, numericValue, motionValue]);
 
   return (
-    <div ref={ref} className="text-center relative z-10 px-4">
+    <div ref={containerRef} className="text-center relative z-10 px-4">
       <div className="text-4xl md:text-5xl lg:text-6xl font-serif text-charcoal mb-2">
-        {isInView ? count : 0}{suffix}
+        <span ref={numberRef}>0</span>{suffix}
       </div>
       <div className="text-[10px] uppercase tracking-[0.2em] text-muted">
         {label}

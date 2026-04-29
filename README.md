@@ -1,20 +1,82 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Lumière Events — Elite Event Planning & Design Template
 
-# Run and deploy your AI Studio app
+Lumière Events is a premium, high-performance web template designed for event planners, decorators, and production agencies. Built with the latest web technologies, it offers a sophisticated aesthetic, smooth animations, and a seamless user experience.
 
-This contains everything you need to run your app locally.
+![Lumiere Events Banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
 
-View your app in AI Studio: https://ai.studio/apps/ae0903ad-d17f-4f29-9796-521d5081ff9d
+## ✨ Features
 
-## Run Locally
+- **Modern & Elegant Design**: A minimalist, high-end aesthetic tailored for luxury services.
+- **Fluid Motion**: Powered by `Motion` (formerly Framer Motion) for smooth reveal animations, parallax effects, and magnetic interactions.
+- **Responsive Layout**: Optimized for all devices, from mobile phones to high-resolution desktops.
+- **Interactive UI Components**: Custom-built counters, magnetic buttons, text revealers, and more.
+- **Multi-Page Experience**: Includes dedicated sections for:
+  - **Home**: Captivating hero section and service highlights.
+  - **Services**: Detailed breakdown of event offerings.
+  - **Portfolio**: Visual showcase of past excellence.
+  - **Packages**: Tiered pricing or service structures.
+  - **Contact**: Integrated inquiry form and location details.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
+
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 6](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Motion](https://motion.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Smoothing**: [Lenis](https://lenis.darkroom.engineering/) for smooth scrolling.
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Ralph-Dulla-23/Lumiere-Events-Template.git
+   cd Lumiere-Events-Template
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`.
+
+## 📦 Project Structure
+
+```text
+src/
+├── components/     # Reusable UI components (SharedUI, etc.)
+├── layouts/        # Page layouts (RootLayout)
+├── lib/            # Utilities and configurations
+├── pages/          # Main page components (Home, Services, etc.)
+├── App.tsx         # Main application component & routing
+└── main.tsx        # Entry point
+```
+
+## 📜 Scripts
+
+- `npm run dev`: Starts the Vite development server.
+- `npm run build`: Builds the project for production.
+- `npm run preview`: Previews the production build locally.
+- `npm run lint`: Runs TypeScript type checks.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.

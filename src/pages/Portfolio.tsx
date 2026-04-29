@@ -40,12 +40,11 @@ export default function Portfolio() {
           <div className="sticky top-0 h-[100dvh] flex items-center overflow-hidden">
             <motion.div style={{ x }} className="flex gap-6 md:gap-12 px-6 md:px-12 w-[350vw] md:w-[300vw]">
                {images.map((img, i) => (
-                  <div key={i} className="w-[85vw] md:w-[60vw] lg:w-[45vw] h-[50vh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-2xl md:rounded-none">
-                    <div 
-                      className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
-                      style={{ backgroundImage: `url(${img}q=80&w=2070&auto=format&fit=crop)` }}
-                    />
-                    <div className="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                 <div key={i} className="w-[85vw] md:w-[60vw] lg:w-[45vw] h-[50vh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden card-responsive">
+                   <div
+                     className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
+                     style={{ backgroundImage: `url(${img}q=80&w=1200&auto=format&fit=crop)` }}
+                   />                    <div className="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                       <span className="text-[12px] uppercase tracking-widest text-white border border-white/30 px-6 py-2 rounded-full backdrop-blur-sm bg-black/20">
                         View Project
                       </span>
