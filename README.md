@@ -2,7 +2,6 @@
 
 Lumière Events is a premium, high-performance web template designed for event planners, decorators, and production agencies. Built with the latest web technologies, it offers a sophisticated aesthetic, smooth animations, and a seamless user experience.
 
-![Lumiere Events Banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
 
 ## ✨ Features
 
